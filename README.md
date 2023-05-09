@@ -1,3 +1,3 @@
 # RestructedPyJS
 
-A JavaScript library that loads PyScript to convert Restructured Text (RST) to HTML.
+A JavaScript library that loads Pyodide to convert Restructured Text (RST) to HTML.
