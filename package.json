@@ -4,7 +4,7 @@
     "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
     "main": "src/restructedPyJS.js",
     "scripts": {
-        "test": "mocha tests/restructedPyJS.test.js --testTimeout=20000",
+        "test": "mocha --timeout=20000 tests/restructedPyJS.test.js",
         "build": "webpack"
     },
     "devDependencies": {
