@@ -1,7 +1,7 @@
 .PHONY: pyodide
 
 PYODIDE_VERSION = 0.23.2
-PYODIDE_URL = https://github.com/pyodide/pyodide/releases/download/${PYODIDE_VERSION}/pyodide-${PYODIDE_VERSION}.tar.bz2
+PYODIDE_URL = https://github.com/pyodide/pyodide/releases/download/${PYODIDE_VERSION}/pyodide-core-${PYODIDE_VERSION}.tar.bz2
 PYODIDE_TAR = pyodide-${PYODIDE_VERSION}.tar.bz2
 PYODIDE_DIR = pyodide
 
