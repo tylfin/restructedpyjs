@@ -1,17 +1,17 @@
-const RestructedPyJS = require('../src/restructedPyJS');
+const RestructedPyJS = require('../src/restructedpyjs');
 const chai = require('chai');
 const expect = chai.expect;
 
 describe('RestructedPyJS', function() {
-  let restructedPyJS;
+  let restructedpyjs;
 
   beforeEach(async function() {
-    restructedPyJS = new RestructedPyJS();
-    await restructedPyJS.initPyodide();
+    restructedpyjs = new RestructedPyJS();
+    await restructedpyjs.initPyodide();
   });
 
   afterEach(function() {
-    restructedPyJS = null;
+    restructedpyjs = null;
   });
 
   it('convert() should return a result from Python', async function() {
@@ -22,7 +22,7 @@ describe('RestructedPyJS', function() {
 </div>
 </body>`;
 
-    const result = await restructedPyJS.convert(inputText);
+    const result = await restructedpyjs.convert(inputText);
 
     console.log(result)
     expect(result).to.equal(expectedResult);
@@ -36,7 +36,7 @@ describe('RestructedPyJS', function() {
 </div>
 </body>`;
 
-    const result = await restructedPyJS.convert(inputText);
+    const result = await restructedpyjs.convert(inputText);
 
     expect(result).to.equal(expectedResult);
   });
@@ -48,7 +48,7 @@ describe('RestructedPyJS', function() {
 </div>
 </body>`
 
-    const result = await restructedPyJS.convert(inputText);
+    const result = await restructedpyjs.convert(inputText);
 
     expect(result).to.equal(expectedResult);
   });

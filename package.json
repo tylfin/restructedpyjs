@@ -1,10 +1,10 @@
 {
-    "name": "restructedPyJS",
+    "name": "restructedpyjs",
     "version": "0.0.1",
     "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
-    "main": "src/restructedPyJS.js",
+    "main": "src/restructedpyjs.js",
     "scripts": {
-        "test": "mocha --timeout=20000 --inline-diffs tests/restructedPyJS.test.js",
+        "test": "mocha --timeout=20000 --inline-diffs tests/restructedpyjs.test.js",
         "build": "webpack"
     },
     "devDependencies": {

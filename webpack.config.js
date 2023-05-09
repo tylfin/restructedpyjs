@@ -3,10 +3,10 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
-  entry: './src/restructedPyJS.js',
+  entry: './src/restructedpyjs.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'restructedPyJS.bundle.js',
+    filename: 'restructedpyjs.bundle.js',
     library: 'RestructedPyJS',
     libraryTarget: 'umd',
     globalObject: 'this',
