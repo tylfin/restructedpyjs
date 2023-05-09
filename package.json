@@ -1,0 +1,24 @@
+{
+    "name": "restructedPyJS",
+    "version": "1.0.0",
+    "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
+    "main": "src/restructedPyJS.js",
+    "scripts": {
+        "test": "mocha tests/restructedPyJS.test.js",
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.21.8",
+        "@babel/preset-env": "^7.21.5",
+        "babel-loader": "^9.1.2",
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0",
+        "webpack": "^5.82.0",
+        "webpack-cli": "^5.1.1"
+    },
+    "author": "Tyler Finethy",
+    "license": "MIT",
+    "dependencies": {
+        "pyodide": "^0.23.2"
+    }
+}

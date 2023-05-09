@@ -1,2 +1,3 @@
-# restructedPyJS
-Javascript Library to convert reStructuredText to HTML using PyScript / WASM
+# RestructedPyJS
+
+A JavaScript library that loads PyScript to convert Restructured Text (RST) to HTML.

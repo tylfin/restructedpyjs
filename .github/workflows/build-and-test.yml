@@ -1,0 +1,23 @@
+name: Build and Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Pyodide
+      run: make pyodide
+
+    - name: Test
+      run: npm test
+
+    - name: Build
+      run: npm run build
