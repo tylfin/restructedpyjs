@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Pyodide
+        run: make pyodide
+
+      - name: Test
+        run: npm test
+
+      - name: Build Library
+        run: npm run build
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Asset
+        id: upload_asset
+        uses: actions/upload-artifact@v2
+        with:
+          name: restructedPyJS
+          path: dist
+
+      - name: Publish Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          asset_path: ${{ steps.upload_asset.outputs.artifact_path }}
+          asset_name: restructedPyJS
+          asset_content_type: application/javascript
+          release_id: ${{ steps.create_release.outputs.id }}

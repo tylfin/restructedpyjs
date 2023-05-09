@@ -4,6 +4,8 @@
 
 A JavaScript library that loads Pyodide to convert Restructured Text (RST) to HTML.
 
+**Warning:** This library is still an experiment and may not be safe for use without input sanitization.
+
 ## Usage
 
 ```js
