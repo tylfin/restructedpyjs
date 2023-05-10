@@ -13,9 +13,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build Pyodide
-      run: make pyodide
-
     - name: Test
       run: npm test
 
