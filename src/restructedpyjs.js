@@ -1,16 +1,21 @@
 import { loadPyodide } from 'pyodide';
+const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.23.2/full/';
 
 class RestructedPyJS {
-  constructor() {
-    this.pyodideReady = this.initPyodide();
+  constructor(loadOpts) {
+    this.loadOpts = loadOpts
+
+    if (loadOpts === undefined || loadOpts === null) {
+      this.loadOpts = { indexURL }
+    }
+    this.pyodideReady = this.initPyodide(indexURL);
   }
 
   /**
    * Initializes Pyodide and loads necessary packages
    */
   async initPyodide() {
-    this.pyodide = null;
-    this.pyodide = await loadPyodide();
+    this.pyodide = await loadPyodide(this.loadOpts);
 
     await this.pyodide.loadPackage("docutils")
     await this.pyodide.loadPackage("beautifulsoup4")

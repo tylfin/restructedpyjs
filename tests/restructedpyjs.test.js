@@ -7,7 +7,7 @@ describe('RestructedPyJS', function() {
   let restructedpyjs;
 
   beforeEach(async function() {
-    restructedpyjs = new RestructedPyJS();
+    restructedpyjs = new RestructedPyJS({});
     await restructedpyjs.initPyodide();
   });
 
