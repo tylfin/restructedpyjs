@@ -40,14 +40,12 @@ This library uses [Pyodide](https://github.com/pyodide/pyodide) to load Python i
 ### Requirements
 
 - Node.js (v14 or later)
-- GNU Make (v4 or later)
 
 ### Installation
 
 To install the development dependencies, run:
 
 ```
-make pyodide
 npm install
 ```
 

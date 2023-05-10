@@ -9,9 +9,7 @@ class RestructedPyJS {
    * Initializes Pyodide and loads necessary packages
    */
   async initPyodide() {
-    this.pyodide = await loadPyodide({
-      indexURL: './pyodide/',
-    });
+    this.pyodide = await loadPyodide();
 
     await this.pyodide.loadPackage("docutils")
     await this.pyodide.loadPackage("beautifulsoup4")

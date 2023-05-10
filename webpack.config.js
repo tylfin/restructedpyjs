@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
@@ -24,10 +23,5 @@ module.exports = {
         },
       },
     ],
-  },
-  performance: {
-    hints: process.env.NODE_ENV === 'production' ? 'warning' : false,
-    maxAssetSize: 600000, // Adjust this value based on your requirements
-    maxEntrypointSize: 600000, // Adjust this value based on your requirements
   },
 };

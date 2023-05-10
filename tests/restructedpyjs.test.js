@@ -23,8 +23,6 @@ describe('RestructedPyJS', function() {
 </body>`;
 
     const result = await restructedpyjs.convert(inputText);
-
-    console.log(result)
     expect(result).to.equal(expectedResult);
   });
 
@@ -49,7 +47,6 @@ describe('RestructedPyJS', function() {
 </body>`
 
     const result = await restructedpyjs.convert(inputText);
-
     expect(result).to.equal(expectedResult);
   });
 });

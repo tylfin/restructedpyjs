@@ -1,6 +1,6 @@
 {
     "name": "restructedpyjs",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
     "main": "src/restructedpyjs.js",
     "scripts": {
@@ -22,7 +22,6 @@
         "pyodide": "^0.23.2"
     },
     "files": [
-        "pyodide",
         "dist"
     ]
 }
