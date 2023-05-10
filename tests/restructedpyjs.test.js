@@ -1,4 +1,4 @@
-const RestructedPyJS = require('../src/restructedpyjs');
+const RestructedPyJS = require('../src/restructedpyjs').default;
 
 const chai = require('chai');
 const expect = chai.expect;

@@ -6,9 +6,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'restructedpyjs.bundle.js',
-    library: 'RestructedPyJS',
+    library: 'restructedpyjs',
     libraryTarget: 'umd',
     globalObject: 'this',
+  },
+  optimization: {
+    minimize: true,
+    splitChunks: false,
+    runtimeChunk: false,
   },
   module: {
     rules: [

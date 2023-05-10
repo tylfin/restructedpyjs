@@ -1,15 +1,16 @@
 {
     "name": "restructedpyjs",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
     "main": "src/restructedpyjs.js",
     "scripts": {
-        "test": "mocha --timeout=20000 --inline-diffs tests/restructedpyjs.test.js",
+        "test": "mocha --require @babel/register --timeout=20000 --inline-diffs tests/restructedpyjs.test.js",
         "build": "webpack"
     },
     "devDependencies": {
         "@babel/core": "^7.21.8",
         "@babel/preset-env": "^7.21.5",
+        "@babel/register": "^7.21.0",
         "babel-loader": "^9.1.2",
         "chai": "^4.3.7",
         "mocha": "^10.2.0",
@@ -23,5 +24,10 @@
     },
     "files": [
         "dist"
-    ]
+    ],
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    }
 }

@@ -1,4 +1,4 @@
-const { loadPyodide, runPythonAsync } = require('pyodide');
+import { loadPyodide } from 'pyodide';
 
 class RestructedPyJS {
   constructor() {
@@ -9,6 +9,7 @@ class RestructedPyJS {
    * Initializes Pyodide and loads necessary packages
    */
   async initPyodide() {
+    this.pyodide = null;
     this.pyodide = await loadPyodide();
 
     await this.pyodide.loadPackage("docutils")
@@ -45,4 +46,4 @@ class RestructedPyJS {
   }
 }
 
-module.exports = RestructedPyJS;
+export default RestructedPyJS;
