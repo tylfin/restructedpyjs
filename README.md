@@ -1,6 +1,6 @@
 # RestructedPyJS
 
-[![Build and Test](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml)
+[![Build and Test](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml) [![Inline demo](https://img.shields.io/badge/Try_it_out-demo-informational)](https://forcepushrevert.com/restructedpyjs/)
 
 A JavaScript library that loads Pyodide to convert Restructured Text (RST) to HTML.
 
@@ -17,7 +17,7 @@ npm install restructedpyjs
 ## Usage
 
 ```js
-const RestructedPyJS = require('restructedpyjs');
+const RestructedPyJS = require('restructedpyjs').default;
 
 const rstToHtml = async (rstText) => {
   const restructedpyjs = new RestructedPyJS();
