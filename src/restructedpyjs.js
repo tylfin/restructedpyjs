@@ -30,23 +30,22 @@ class RestructedPyJS {
    */
   async convert(rstText) {
     await this.pyodideReady; // Wait for Pyodide to load
+    const escapedText = rstText.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"');
+    const pythonCode = `from docutils.core import publish_string
+from bs4 import BeautifulSoup
 
-    const pythonCode = `
-      from docutils.core import publish_string
-      from bs4 import BeautifulSoup
+rstText = """${escapedText}"""
 
-      html = publish_string(source="${rstText}", writer_name='html', settings_overrides={
-          'initial_header_level': 2,
-          'doctitle_xform': False,
-          'embed_stylesheet': False,
-          'stylesheet_path': None,
-      }).decode()
+html = publish_string(source=rstText, writer_name='html', settings_overrides={
+    'initial_header_level': 2,
+    'doctitle_xform': False,
+    'embed_stylesheet': False,
+    'stylesheet_path': None,
+}).decode()
 
-      soup = BeautifulSoup(html, 'html.parser')
-      body = soup.body
-      str(body)
-    `;
-
+soup = BeautifulSoup(html, 'html.parser')
+body = soup.body
+str(body)`;
     return await this.pyodide.runPython(pythonCode);
   }
 }

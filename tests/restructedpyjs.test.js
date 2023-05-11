@@ -50,4 +50,18 @@ describe('RestructedPyJS', function() {
     const result = await restructedpyjs.convert(inputText);
     expect(result).to.equal(expectedResult);
   });
+
+  it('convert() should handle multi-line input with formatting', async function() {
+    const inputText = '######\nHeader\n######\n';
+    const expectedResult = `<body>
+<div class="document">
+<div class="section" id="header">
+<h2>Header</h2>
+</div>
+</div>
+</body>`
+
+    const result = await restructedpyjs.convert(inputText);
+    expect(result).to.equal(expectedResult);
+  });
 });
