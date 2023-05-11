@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RestructedPyJS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #input-area,
+      #output {
+        width: 600px;
+        height: 500px;
+        margin-bottom: 20px;
+      }
+      #convert {
+        width: 150px;
+      }
+      #output {
+        border: 1px solid #ddd;
+        padding: 20px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My RST to HTML Converter Demo</h1>
+
+    <textarea id="input-area">===============================
+Boto3 - The AWS SDK for Python
+===============================
+
+|Version| |Python| |License|
+
+Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for
+Python, which allows Python developers to write software that makes use
+of services like Amazon S3 and Amazon EC2. You can find the latest, most
+up to date, documentation at our `doc site`_, including a list of
+services that are supported.
+
+Boto3 is maintained and published by `Amazon Web Services`_.
+
+Boto (pronounced boh-toh) was named after the fresh water dolphin native to the Amazon river. The name was chosen by the author of the original Boto library, Mitch Garnaat, as a reference to the company.
+
+Notices
+-------
+
+On 2021-01-15, deprecation for Python 2.7 was announced and support was dropped
+on 2021-07-15. To avoid disruption, customers using Boto3 on Python 2.7 may
+need to upgrade their version of Python or pin the version of Boto3. For
+more information, see this `blog post <https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-python-2-7-in-aws-sdk-for-python-and-aws-cli-v1/>`__.
+
+On 2022-05-30, support for Python 3.6 was ended. This follows the
+Python Software Foundation `end of support <https://www.python.org/dev/peps/pep-0494/#lifespan>`__
+for the runtime which occurred on 2021-12-23.
+For more information, see this `blog post <https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/>`__.
+
+.. _boto: https://docs.pythonboto.org/
+.. _`doc site`: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+.. _`Amazon Web Services`: https://aws.amazon.com/what-is-aws/
+.. |Python| image:: https://img.shields.io/pypi/pyversions/boto3.svg?style=flat
+    :target: https://pypi.python.org/pypi/boto3/
+    :alt: Python Versions
+.. |Version| image:: http://img.shields.io/pypi/v/boto3.svg?style=flat
+    :target: https://pypi.python.org/pypi/boto3/
+    :alt: Package Version
+.. |License| image:: http://img.shields.io/pypi/l/boto3.svg?style=flat
+    :target: https://github.com/boto/boto3/blob/develop/LICENSE
+    :alt: License
+</textarea>
+
+    <button id="convert">Convert</button>
+    <p />
+    <div id="output"></div>
+
+
+    <script src="https://unpkg.com/restructedpyjs@latest/dist/restructedpyjs.bundle.js"></script>
+    <script>
+      const rstToHtml = async (rstText) => {
+        const restructedpyjs = new window.restructedpyjs.default();
+        const html = await restructedpyjs.convert(rstText);
+        return html;
+      }
+
+      document.querySelector('#convert').addEventListener('click', async () => {
+        const inputText = document.querySelector('#input-area').value;
+        const html = await rstToHtml(inputText);
+        document.querySelector('#output').innerHTML = html;
+      });
+    </script>
+  </body>
+</html>
