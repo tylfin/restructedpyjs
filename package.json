@@ -20,7 +20,7 @@
     "author": "Tyler Finethy",
     "license": "MIT",
     "dependencies": {
-        "pyodide": "^0.23.2"
+        "pyodide": "^0.24.0"
     },
     "files": [
         "dist"
