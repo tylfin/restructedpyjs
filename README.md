@@ -41,11 +41,11 @@ This library uses [Pyodide](https://github.com/pyodide/pyodide) to load Python i
 
 - Node.js (v14 or later)
 
-### Installation
+### Installation Dev
 
 To install the development dependencies, run:
 
-```
+```bash
 npm install
 ```
 
@@ -53,7 +53,7 @@ npm install
 
 To build the library, run:
 
-```
+```bash
 npm run build
 ```
 
@@ -61,7 +61,7 @@ npm run build
 
 To run the tests, run:
 
-```
+```bash
 npm test
 ```
 
