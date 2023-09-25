@@ -1,5 +1,5 @@
 import { loadPyodide } from 'pyodide';
-const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.23.2/full/';
+const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.24.0/full';
 
 class RestructedPyJS {
   constructor(loadOpts) {
