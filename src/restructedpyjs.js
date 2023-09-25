@@ -8,7 +8,7 @@ class RestructedPyJS {
     if (loadOpts === undefined || loadOpts === null) {
       this.loadOpts = { indexURL }
     }
-    this.pyodideReady = this.initPyodide(indexURL);
+    this.pyodideReady = this.initPyodide();
   }
 
   /**
