@@ -1,34 +1,22 @@
 {
-    "name": "restructedpyjs",
-    "version": "0.0.9",
-    "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
-    "main": "src/restructedpyjs.js",
-    "scripts": {
-        "test": "mocha --require @babel/register --timeout=20000 --inline-diffs tests/restructedpyjs.test.js",
-        "build": "webpack"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.21.8",
-        "@babel/preset-env": "^7.21.5",
-        "@babel/register": "^7.21.0",
-        "babel-loader": "^9.1.2",
-        "chai": "^4.3.7",
-        "mocha": "^10.2.0",
-        "webpack": "^5.82.0",
-        "webpack-cli": "^5.1.1"
-    },
-    "author": "Tyler Finethy",
-    "license": "MIT",
-    "dependencies": {
-        "node-fetch": "^2.7.0",
-        "pyodide": "^0.24.0"
-    },
-    "files": [
-        "dist"
-    ],
-    "babel": {
-        "presets": [
-            "@babel/preset-env"
-        ]
-    }
+  "name": "restructedpyjs",
+  "version": "0.0.10",
+  "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc && node ./dist/update.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.5"
+  },
+  "author": "Tyler Finethy",
+  "license": "MIT",
+  "dependencies": {
+    "pyodide": "^0.24.1"
+  }
 }

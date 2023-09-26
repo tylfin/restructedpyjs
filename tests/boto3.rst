@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>RestructedPyJS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #input-area,
-    #output {
-      width: 600px;
-      height: 500px;
-      margin-bottom: 20px;
-    }
-
-    #convert {
-      width: 150px;
-    }
-
-    #output {
-      border: 1px solid #ddd;
-      padding: 20px;
-      overflow: auto;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>My RST to HTML Converter Demo</h1>
-
-  <textarea id="input-area">===============================
+===============================
 Boto3 - The AWS SDK for Python
 ===============================
 
@@ -75,26 +39,3 @@ For more information, see this `blog post <https://aws.amazon.com/blogs/develope
 .. |License| image:: http://img.shields.io/pypi/l/boto3.svg?style=flat
     :target: https://github.com/boto/boto3/blob/develop/LICENSE
     :alt: License
-</textarea>
-
-  <button id="convert">Convert</button>
-  <p />
-  <div id="output"></div>
-
-  <script src="https://unpkg.com/restructedpyjs@latest/dist/restructedpyjs.bundle.js"></script>
-  <script>
-    const rstToHtml = async (rstText) => {
-      const restructedpyjs = new window.restructedpyjs.default();
-      const html = await restructedpyjs.convert(rstText);
-      return html;
-    }
-
-    document.querySelector('#convert').addEventListener('click', async () => {
-      const inputText = document.querySelector('#input-area').value;
-      const html = await rstToHtml(inputText);
-      document.querySelector('#output').innerHTML = html;
-    });
-  </script>
-</body>
-
-</html>

@@ -2,9 +2,9 @@
 
 [![Build and Test](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/tylfin/restructedpyjs/actions/workflows/build-and-test.yml) [![Inline demo](https://img.shields.io/badge/Try_it_out-demo-informational)](https://forcepushrevert.com/restructedpyjs/)
 
-A JavaScript library that loads Pyodide to convert Restructured Text (RST) to HTML.
+A TypeScript/JavaScript library that loads Pyodide via WASM to convert reStructuredText (RST) to HTML.
 
-**Warning:** This library is still an experiment and may not be safe for use without input sanitization.
+**Warning:** You should use [sanitize-html](https://www.npmjs.com/package/sanitize-html) to sanitize any output HTML.
 
 ## Installation
 
@@ -17,10 +17,11 @@ npm install restructedpyjs
 ## Usage
 
 ```js
-const RestructedPyJS = require('restructedpyjs').default;
+import RestructedPyJS from "restructedpyjs";
 
 const rstToHtml = async (rstText) => {
   const restructedpyjs = new RestructedPyJS();
+  await restructuredpyjs.initPyodide();
   const html = await restructedpyjs.convert(rstText);
   return html;
 }
@@ -29,7 +30,7 @@ const inputText = 'Hello, Python!';
 rstToHtml(inputText).then(html => console.log(html));
 ```
 
-The convert() method of RestructedPyJS converts the provided Restructured Text (RST) input to HTML output.
+The `convert()` method of RestructedPyJS converts the provided Restructured Text (RST) input to HTML output.
 
 ## Pyodide
 
@@ -39,7 +40,7 @@ This library uses [Pyodide](https://github.com/pyodide/pyodide) to load Python i
 
 ### Requirements
 
-- Node.js (v14 or later)
+- Node.js (v18 or later)
 
 ### Installation Dev
 
@@ -59,7 +60,7 @@ npm run build
 
 ### Testing
 
-To run the tests, run:
+To run the tests, first build the library, then run:
 
 ```bash
 npm test

@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RestructedPyJS > convert > should handle a real rst file 1`] = `
+"<body>
+<div class=\\"document\\">
+<div class=\\"section\\" id=\\"boto3-the-aws-sdk-for-python\\">
+<h2>Boto3 - The AWS SDK for Python</h2>
+<p><a class=\\"reference external image-reference\\" href=\\"https://pypi.python.org/pypi/boto3/\\"><img alt=\\"Package Version\\" src=\\"http://img.shields.io/pypi/v/boto3.svg?style=flat\\"/></a> <a class=\\"reference external image-reference\\" href=\\"https://pypi.python.org/pypi/boto3/\\"><img alt=\\"Python Versions\\" src=\\"https://img.shields.io/pypi/pyversions/boto3.svg?style=flat\\"/></a> <a class=\\"reference external image-reference\\" href=\\"https://github.com/boto/boto3/blob/develop/LICENSE\\"><img alt=\\"License\\" src=\\"http://img.shields.io/pypi/l/boto3.svg?style=flat\\"/></a></p>
+<p>Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for
+Python, which allows Python developers to write software that makes use
+of services like Amazon S3 and Amazon EC2. You can find the latest, most
+up to date, documentation at our <a class=\\"reference external\\" href=\\"https://boto3.amazonaws.com/v1/documentation/api/latest/index.html\\">doc site</a>, including a list of
+services that are supported.</p>
+<p>Boto3 is maintained and published by <a class=\\"reference external\\" href=\\"https://aws.amazon.com/what-is-aws/\\">Amazon Web Services</a>.</p>
+<p>Boto (pronounced boh-toh) was named after the fresh water dolphin native to the Amazon river. The name was chosen by the author of the original Boto library, Mitch Garnaat, as a reference to the company.</p>
+<div class=\\"section\\" id=\\"notices\\">
+<h3>Notices</h3>
+<p>On 2021-01-15, deprecation for Python 2.7 was announced and support was dropped
+on 2021-07-15. To avoid disruption, customers using Boto3 on Python 2.7 may
+need to upgrade their version of Python or pin the version of Boto3. For
+more information, see this <a class=\\"reference external\\" href=\\"https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-python-2-7-in-aws-sdk-for-python-and-aws-cli-v1/\\">blog post</a>.</p>
+<p>On 2022-05-30, support for Python 3.6 was ended. This follows the
+Python Software Foundation <a class=\\"reference external\\" href=\\"https://www.python.org/dev/peps/pep-0494/#lifespan\\">end of support</a>
+for the runtime which occurred on 2021-12-23.
+For more information, see this <a class=\\"reference external\\" href=\\"https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/\\">blog post</a>.</p>
+</div>
+</div>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert > should handle empty string input 1`] = `
+"<body>
+<div class=\\"document\\">
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert > should handle multi-line input with formatting 1`] = `
+"<body>
+<div class=\\"document\\">
+<div class=\\"section\\" id=\\"header\\">
+<h2>Header</h2>
+</div>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert > should handle special characters 1`] = `
+"<body>
+<div class=\\"document\\">
+<p>5 &lt; 6</p>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert > should return a result from Python 1`] = `
+"<body>
+<div class=\\"document\\">
+<p>Hello, Python!</p>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert() > should handle a real rst file 1`] = `
+"<body>
+<div class=\\"document\\">
+<div class=\\"section\\" id=\\"boto3-the-aws-sdk-for-python\\">
+<h2>Boto3 - The AWS SDK for Python</h2>
+<p><a class=\\"reference external image-reference\\" href=\\"https://pypi.python.org/pypi/boto3/\\"><img alt=\\"Package Version\\" src=\\"http://img.shields.io/pypi/v/boto3.svg?style=flat\\"/></a> <a class=\\"reference external image-reference\\" href=\\"https://pypi.python.org/pypi/boto3/\\"><img alt=\\"Python Versions\\" src=\\"https://img.shields.io/pypi/pyversions/boto3.svg?style=flat\\"/></a> <a class=\\"reference external image-reference\\" href=\\"https://github.com/boto/boto3/blob/develop/LICENSE\\"><img alt=\\"License\\" src=\\"http://img.shields.io/pypi/l/boto3.svg?style=flat\\"/></a></p>
+<p>Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for
+Python, which allows Python developers to write software that makes use
+of services like Amazon S3 and Amazon EC2. You can find the latest, most
+up to date, documentation at our <a class=\\"reference external\\" href=\\"https://boto3.amazonaws.com/v1/documentation/api/latest/index.html\\">doc site</a>, including a list of
+services that are supported.</p>
+<p>Boto3 is maintained and published by <a class=\\"reference external\\" href=\\"https://aws.amazon.com/what-is-aws/\\">Amazon Web Services</a>.</p>
+<p>Boto (pronounced boh-toh) was named after the fresh water dolphin native to the Amazon river. The name was chosen by the author of the original Boto library, Mitch Garnaat, as a reference to the company.</p>
+<div class=\\"section\\" id=\\"notices\\">
+<h3>Notices</h3>
+<p>On 2021-01-15, deprecation for Python 2.7 was announced and support was dropped
+on 2021-07-15. To avoid disruption, customers using Boto3 on Python 2.7 may
+need to upgrade their version of Python or pin the version of Boto3. For
+more information, see this <a class=\\"reference external\\" href=\\"https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-python-2-7-in-aws-sdk-for-python-and-aws-cli-v1/\\">blog post</a>.</p>
+<p>On 2022-05-30, support for Python 3.6 was ended. This follows the
+Python Software Foundation <a class=\\"reference external\\" href=\\"https://www.python.org/dev/peps/pep-0494/#lifespan\\">end of support</a>
+for the runtime which occurred on 2021-12-23.
+For more information, see this <a class=\\"reference external\\" href=\\"https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/\\">blog post</a>.</p>
+</div>
+</div>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert() > should handle empty string input 1`] = `
+"<body>
+<div class=\\"document\\">
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert() > should handle multi-line input with formatting 1`] = `
+"<body>
+<div class=\\"document\\">
+<div class=\\"section\\" id=\\"header\\">
+<h2>Header</h2>
+</div>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert() > should handle special characters 1`] = `
+"<body>
+<div class=\\"document\\">
+<p>5 &lt; 6</p>
+</div>
+</body>"
+`;
+
+exports[`RestructedPyJS > convert() > should return a result from Python 1`] = `
+"<body>
+<div class=\\"document\\">
+<p>Hello, Python!</p>
+</div>
+</body>"
+`;
