@@ -1,6 +1,6 @@
 {
     "name": "restructedpyjs",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "description": "A JavaScript library that loads PyScript to convert Restructured Text to HTML",
     "main": "src/restructedpyjs.js",
     "scripts": {
@@ -20,7 +20,7 @@
     "author": "Tyler Finethy",
     "license": "MIT",
     "dependencies": {
-        "pyodide": "^0.23.2"
+        "pyodide": "^0.23.4"
     },
     "files": [
         "dist"
