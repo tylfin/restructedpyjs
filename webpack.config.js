@@ -10,6 +10,11 @@ module.exports = {
     libraryTarget: 'umd',
     globalObject: 'this',
   },
+  resolve: {
+    alias: {
+      'node-fetch': 'axios',
+    }
+  },
   optimization: {
     minimize: true,
     splitChunks: false,
