@@ -1,8 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
   entry: './src/restructedpyjs.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -10,6 +9,11 @@ module.exports = {
     library: 'restructedpyjs',
     libraryTarget: 'umd',
     globalObject: 'this',
+  },
+  resolve: {
+    alias: {
+      'node-fetch': 'axios',
+    }
   },
   optimization: {
     minimize: true,
