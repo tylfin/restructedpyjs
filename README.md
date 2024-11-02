@@ -48,7 +48,7 @@ This library uses [Pyodide](https://github.com/pyodide/pyodide) to load Python i
 
 ### Requirements
 
-- Node.js (v14 or later)
+- Node.js (v23 or later)
 
 ### Installation Dev
 
