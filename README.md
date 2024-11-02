@@ -19,7 +19,7 @@ npm install restructedpyjs
 Add the source snippet:
 
 ```html
-<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.3/full/pyodide.asm.js"></script>
 <script src="https://unpkg.com/restructedpyjs@latest/dist/restructedpyjs.bundle.js"></script>
 ```
 
