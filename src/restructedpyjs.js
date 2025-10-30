@@ -21,9 +21,34 @@ class RestructedPyJS {
    */
   async initPyodide() {
     this.pyodide = await loadPyodide(this.loadOpts);
+    // Try normal package loading; if wheels are missing in Node, fall back to micropip from CDN
+    try {
+      await this.pyodide.loadPackage("docutils");
+    } catch (error) {
+      await this._installWheelsFallback([
+        "docutils-0.21.2-py3-none-any.whl",
+      ]);
+    }
 
-    await this.pyodide.loadPackage("docutils")
-    await this.pyodide.loadPackage("beautifulsoup4")
+    try {
+      await this.pyodide.loadPackage("beautifulsoup4");
+    } catch (error) {
+      await this._installWheelsFallback([
+        "soupsieve-2.6-py3-none-any.whl",
+        "typing_extensions-4.15.0-py3-none-any.whl",
+        "beautifulsoup4-4.13.3-py3-none-any.whl",
+      ]);
+    }
+  }
+
+  async _installWheelsFallback(wheelNames) {
+    // Installs a list of wheels from the Pyodide CDN using micropip
+    const wheelUrls = wheelNames.map((name) => `${indexURL}${name}`);
+    await this.pyodide.loadPackage("micropip");
+    const wheelsJson = JSON.stringify(wheelUrls);
+    await this.pyodide.runPythonAsync(
+      `import micropip\nawait micropip.install(${wheelsJson})`
+    );
   }
 
   /**
