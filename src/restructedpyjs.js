@@ -5,10 +5,13 @@ const indexURL = `https://cdn.jsdelivr.net/pyodide/v${pyodidePackageJson.version
 
 class RestructedPyJS {
   constructor(loadOpts) {
-    this.loadOpts = loadOpts
-
-    if (loadOpts === undefined || loadOpts === null) {
-      this.loadOpts = { indexURL }
+    // Ensure a valid options object and default indexURL for Pyodide 0.29+
+    this.loadOpts = loadOpts || {};
+    if (!this.loadOpts.indexURL) {
+      // In browsers, default to the CDN; in Node, allow pyodide to resolve locally
+      if (typeof window !== 'undefined') {
+        this.loadOpts.indexURL = indexURL;
+      }
     }
     this.pyodideReady = this.initPyodide();
   }
