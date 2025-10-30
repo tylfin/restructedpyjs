@@ -13,6 +13,7 @@ class RestructedPyJS {
         this.loadOpts.indexURL = indexURL;
       }
     }
+    // Kick off initialization but ensure idempotency in initPyodide
     this.pyodideReady = this.initPyodide();
   }
 
@@ -20,25 +21,31 @@ class RestructedPyJS {
    * Initializes Pyodide and loads necessary packages
    */
   async initPyodide() {
-    this.pyodide = await loadPyodide(this.loadOpts);
+    if (this._initPromise) {
+      return this._initPromise;
+    }
+    this._initPromise = (async () => {
+      this.pyodide = await loadPyodide(this.loadOpts);
     // Try normal package loading; if wheels are missing in Node, fall back to micropip from CDN
-    try {
-      await this.pyodide.loadPackage("docutils");
-    } catch (error) {
-      await this._installWheelsFallback([
-        "docutils-0.21.2-py3-none-any.whl",
-      ]);
-    }
+      try {
+        await this.pyodide.loadPackage("docutils");
+      } catch (error) {
+        await this._installWheelsFallback([
+          "docutils-0.21.2-py3-none-any.whl",
+        ]);
+      }
 
-    try {
-      await this.pyodide.loadPackage("beautifulsoup4");
-    } catch (error) {
-      await this._installWheelsFallback([
-        "soupsieve-2.6-py3-none-any.whl",
-        "typing_extensions-4.15.0-py3-none-any.whl",
-        "beautifulsoup4-4.13.3-py3-none-any.whl",
-      ]);
-    }
+      try {
+        await this.pyodide.loadPackage("beautifulsoup4");
+      } catch (error) {
+        await this._installWheelsFallback([
+          "soupsieve-2.6-py3-none-any.whl",
+          "typing_extensions-4.15.0-py3-none-any.whl",
+          "beautifulsoup4-4.13.3-py3-none-any.whl",
+        ]);
+      }
+    })();
+    return this._initPromise;
   }
 
   async _installWheelsFallback(wheelNames) {
